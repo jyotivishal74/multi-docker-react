@@ -14,7 +14,7 @@ after_success:
     # Log in to docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"  --password-stdin docker.io
     # Take those images and psuh them to docker hub
-    - docker psuh vjy0574/multi-client
-    - docker psuh vjy0574/multi-nginx
-    - docker psuh vjy0574/multi-server
-    - docker psuh vjy0574/multi-worker
+    - docker push vjy0574/multi-client
+    - docker push vjy0574/multi-nginx
+    - docker push vjy0574/multi-server
+    - docker push vjy0574/multi-worker

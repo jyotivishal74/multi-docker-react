@@ -18,3 +18,15 @@ after_success:
     - docker push vjy0574/multi-nginx
     - docker push vjy0574/multi-server
     - docker push vjy0574/multi-worker
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: "ap-south-1"
+    app: "multi-docker-react"
+    env: "MultiDockerReact-env"
+    bucket_name: "elasticbeanstalk-ap-south-1-619365515374"
+    bucket_path: "multi-docker-react"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
